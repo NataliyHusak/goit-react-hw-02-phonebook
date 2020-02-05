@@ -30,7 +30,7 @@ export default class PhoneBook extends Component {
       )
     ) {
       const message = `${name} is already is contacts`;
-      Error.error({
+      console.log({
         text: message
       });
       return message;
