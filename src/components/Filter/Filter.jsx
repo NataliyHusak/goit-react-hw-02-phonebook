@@ -7,14 +7,14 @@ const Filter = ({ htmlFor, onChange, value }) => (
   <>
     <form className={Styles.form__filter}>
       <label htmlFor={htmlFor} className={Styles['form__name-title']}>
-        Fined contacts by name
+        Find contacts by name:
         <input
           className={Styles['form__name-input']}
           onChange={onChange}
           value={value}
           name="filter"
           type="text"
-          placeholder="Input fined contacts"
+          placeholder="Input contact to find"
         />
       </label>
     </form>

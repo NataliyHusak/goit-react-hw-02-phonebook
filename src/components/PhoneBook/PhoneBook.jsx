@@ -7,8 +7,15 @@ import Styles from "./PhoneBook.module.css";
 
 export default class PhoneBook extends Component {
   state = {
-    contacts: [],
-    filter: ""
+    contacts: [
+      { id: "id-1", name: "Rosie Simpson", number: "459-12-56" },
+      { id: "id-2", name: "Hermione Kline", number: "443-89-12" },
+      { id: "id-3", name: "Eden Clements", number: "645-17-79" },
+      { id: "id-4", name: "Annie Copeland", number: "227-91-26" }
+    ],
+    filter: "",
+    name: "",
+    number: ""
   };
 
   inputIds = {
@@ -30,10 +37,8 @@ export default class PhoneBook extends Component {
       )
     ) {
       const message = `${name} is already is contacts`;
-      console.log({
-        text: message
-      });
-      return message;
+
+      return alert(message);
     }
     this.setState({
       contacts: [...contacts, e]
@@ -61,7 +66,13 @@ export default class PhoneBook extends Component {
           htmlFor={{ nameId, numberId }}
         />
         <h2 className={Styles.subTitle}>Contacts</h2>
-        <Filter onChange={this.handleChange} htmlFor={finedId} value={filter} />
+        {contacts.length > 1 && (
+          <Filter
+            onChange={this.handleChange}
+            htmlFor={finedId}
+            value={filter}
+          />
+        )}
         <ContactList
           filterContacts={filterContacts}
           onClickDelete={this.deleteContact}

@@ -44,7 +44,7 @@ export default class ContactForm extends Component {
               onChange={this.handleChange}
               value={number}
               name="number"
-              type="tel"
+              type="number"
               placeholder="Input phone"
             />
           </label>
@@ -64,7 +64,7 @@ export default class ContactForm extends Component {
     onSubmit: PropTypes.func.isRequired,
     htmlFor: PropTypes.shape({
       nameId: PropTypes.string.isRequired,
-      numberId: PropTypes.string.isRequired
+      numberId: PropTypes.number.isRequired
     }).isRequired
   };
 
